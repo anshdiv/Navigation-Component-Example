@@ -1,6 +1,7 @@
 package com.appzgarden.navigationpoc
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -27,8 +28,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        configNavigation()
         nav_view.setNavigationItemSelectedListener(this)
+        configNavigation()
+        onNavigationItemSelected(nav_view.menu.getItem(0));
     }
 
     private fun configNavigation() {
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
         NavigationUI.setupWithNavController(
             bottom_navigation_view,
-            navHostFragment!!.getNavController()
+            navHostFragment!!.navController
         )
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -54,13 +56,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             navController!!,
             appBarConfiguration
         )
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)

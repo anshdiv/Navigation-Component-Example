@@ -17,4 +17,6 @@
     <string name="menu_school_2">School 2</string>
     <string name="menu_school_3">School 3</string>
     <string name="menu_school_4">School 4</string>
+    <string name="detail">Details</string>
+    <string name="btn_detail">Show Detail</string>
 </resources>
