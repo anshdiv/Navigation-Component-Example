@@ -1,4 +1,4 @@
-package com.appzgarden.navigationpoc.ui.slideshow
+package com.example.navigationpoc.kotlin.ui.slideshow
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
-import com.appzgarden.navigationpoc.MainViewModel
-import com.appzgarden.navigationpoc.R
+import com.example.navigationpoc.kotlin.MainViewModel
+import com.example.navigationpoc.R
 import kotlinx.android.synthetic.main.fragment_slideshow.*
 
 class SlideshowFragment : Fragment() {

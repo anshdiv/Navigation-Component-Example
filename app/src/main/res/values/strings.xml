@@ -19,4 +19,6 @@
     <string name="menu_school_4">School 4</string>
     <string name="detail">Details</string>
     <string name="btn_detail">Show Detail</string>
+    <string name="label_java">Java</string>
+    <string name="label_kotlin">Kotlin</string>
 </resources>

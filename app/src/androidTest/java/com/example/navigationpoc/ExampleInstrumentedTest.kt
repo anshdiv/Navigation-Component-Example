@@ -1,4 +1,4 @@
-package com.appzgarden.navigationpoc
+package com.example.navigationpoc
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

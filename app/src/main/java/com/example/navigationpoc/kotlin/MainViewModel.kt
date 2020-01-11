@@ -1,4 +1,4 @@
-package com.appzgarden.navigationpoc
+package com.example.navigationpoc.kotlin
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

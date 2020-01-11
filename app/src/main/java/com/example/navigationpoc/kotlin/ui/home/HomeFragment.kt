@@ -1,4 +1,4 @@
-package com.appzgarden.navigationpoc.ui.gallery
+package com.example.navigationpoc.kotlin.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,11 +11,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
-import com.appzgarden.navigationpoc.MainViewModel
-import com.appzgarden.navigationpoc.R
-import kotlinx.android.synthetic.main.fragment_gallery.*
+import com.example.navigationpoc.kotlin.MainViewModel
+import com.example.navigationpoc.R
+import kotlinx.android.synthetic.main.fragment_home.*
 
-class GalleryFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     private lateinit var mainViewModel: MainViewModel
 
@@ -26,20 +26,18 @@ class GalleryFragment : Fragment() {
     ): View? {
         mainViewModel =
             ViewModelProviders.of(activity!!).get(MainViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val textView: TextView = root.findViewById(R.id.text_home)
         val detailButton: Button = root.findViewById(R.id.detail_button)
         mainViewModel.schoolName.observe(this, Observer {
-            textView.text = "Gallery $it"
+            textView.text = "Home $it"
         })
 
         detailButton.setOnClickListener {
             val action: NavDirections =
-                GalleryFragmentDirections.galleryToDetail(selectedOption = "From Gallery -> " + mainViewModel.schoolName.value)
-            Navigation.findNavController(gallery_container).navigate(action)
+                HomeFragmentDirections.homeToDetail(selectedOption = "From Home -> " + mainViewModel.schoolName.value)
+            Navigation.findNavController(home_container).navigate(action)
         }
-
         return root
     }
-
 }

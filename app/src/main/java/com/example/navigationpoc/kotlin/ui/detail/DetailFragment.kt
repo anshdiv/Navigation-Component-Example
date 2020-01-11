@@ -1,4 +1,4 @@
-package com.appzgarden.navigationpoc.ui.detail
+package com.example.navigationpoc.kotlin.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.appzgarden.navigationpoc.MainViewModel
-import com.appzgarden.navigationpoc.R
+import com.example.navigationpoc.kotlin.MainViewModel
+import com.example.navigationpoc.R
 
 class DetailFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.appzgarden.navigationpoc
+package com.example.navigationpoc
 
 import org.junit.Test
 
