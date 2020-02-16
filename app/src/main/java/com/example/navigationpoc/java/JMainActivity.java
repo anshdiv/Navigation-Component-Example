@@ -23,7 +23,6 @@ import java.util.Set;
 
 public class JMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private AppBarConfiguration appBarConfiguration;
     private MainViewModel mainViewModel;
     private NavController navController;
     NavHostFragment navHostFragment;
@@ -41,7 +40,9 @@ public class JMainActivity extends AppCompatActivity implements NavigationView.O
         bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-        navController = navHostFragment.getNavController();
+        if (navHostFragment != null) {
+            navController = navHostFragment.getNavController();
+        }
         navigationView.setNavigationItemSelectedListener(this);
         configNavigation();
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
@@ -64,7 +65,7 @@ public class JMainActivity extends AppCompatActivity implements NavigationView.O
         topLevelDestinations.add(R.id.nav_home);
         topLevelDestinations.add(R.id.nav_gallery);
         topLevelDestinations.add(R.id.nav_slideshow);
-        appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations).setDrawerLayout(drawerLayout).build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations).setDrawerLayout(drawerLayout).build();
 
         NavigationUI.setupWithNavController(
                 findViewById(R.id.toolbar),
