@@ -18,7 +18,7 @@ public class KMainActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     private lateinit var appBarConfiguration: AppBarConfiguration
     private var mainViewModel: MainViewModel? = null
     private var navController: NavController? = null
-    var navHostFragment: NavHostFragment? = null
+    private var navHostFragment: NavHostFragment? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
